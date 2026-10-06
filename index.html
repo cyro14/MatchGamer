@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Gamer | Anywhere Gamer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Tela 1: Perfil e Filtros -->
+        <div id="screen-profile" class="screen active">
+            <h2>O que você quer jogar?</h2>
+            <select id="genre-select">
+                <option value="4">Ação</option>
+                <option value="5">RPG</option>
+                <option value="83">Plataforma</option>
+                <option value="3">Aventura</option>
+            </select>
+            <button id="btn-start" class="btn-primary">Encontrar Jogos</button>
+            <button id="btn-view-matches" class="btn-secondary">Ver Meus Matches</button>
+        </div>
+
+        <!-- Tela 2: O Tinder (Swipe) -->
+        <div id="screen-swipe" class="screen">
+            <div id="card-container">
+                <!-- Os cards vão aparecer aqui via JS -->
+            </div>
+            <div class="controls">
+                <button id="btn-reject" class="btn-swipe reject">❌ Pular</button>
+                <button id="btn-match" class="btn-swipe match">💖 Match</button>
+            </div>
+        </div>
+
+        <!-- Tela 3: Lista de Matches (Monetização) -->
+        <div id="screen-matches" class="screen">
+            <h2>Seus Matches</h2>
+            <div id="matches-list"></div>
+            <button id="btn-back" class="btn-secondary">Voltar a Procurar</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

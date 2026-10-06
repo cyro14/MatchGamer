@@ -1,0 +1,43 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+body { background-color: #121212; color: #fff; display: flex; justify-content: center; height: 100vh; }
+
+#app-container { width: 100%; max-width: 400px; padding: 20px; text-align: center; }
+.screen { display: none; flex-direction: column; height: 100%; }
+.screen.active { display: flex; }
+
+/* Cards de Jogo */
+#card-container { position: relative; width: 100%; height: 60vh; margin-bottom: 20px; }
+.game-card {
+    position: absolute; width: 100%; height: 100%; border-radius: 15px;
+    background-size: cover; background-position: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 20px; text-align: left; background-color: #222;
+}
+.game-card::after { /* Gradiente escuro para ler o texto */
+    content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9)); border-radius: 0 0 15px 15px; z-index: 1;
+}
+.game-info { position: relative; z-index: 2; }
+.game-info h3 { font-size: 1.5rem; margin-bottom: 5px; }
+
+/* Animações de Swipe */
+.swipe-left { transform: translateX(-150%) rotate(-15deg); opacity: 0; }
+.swipe-right { transform: translateX(150%) rotate(15deg); opacity: 0; }
+
+/* Botões */
+.controls { display: flex; justify-content: space-between; }
+button { padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.btn-primary { background: #ff4757; color: white; width: 100%; margin: 10px 0; }
+.btn-secondary { background: #333; color: white; width: 100%; }
+.btn-swipe { width: 45%; font-size: 1.2rem; }
+.btn-swipe.reject { background: #333; color: #ff6b81; }
+.btn-swipe.match { background: #333; color: #2ed573; }
+
+/* Lista de Matches */
+.match-item { 
+    display: flex; justify-content: space-between; align-items: center; 
+    background: #222; padding: 10px; border-radius: 8px; margin-bottom: 10px;
+}
+.btn-amazon { background: #ff9900; color: #000; padding: 8px 12px; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold;}
